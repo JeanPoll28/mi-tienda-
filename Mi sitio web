@@ -1,9 +1,9 @@
-<!DOCTYPE html> <!-- Declara que el documento es HTML5 -->
-<html lang="en"> <!-- Define que el idioma principal del documento es inglés -->
+<!DOCTYPE html> 
+<html lang="en"> 
 <head>
-  <meta charset="UTF-8" /> <!-- Establece la codificación de caracteres como UTF-8 para asegurar que los caracteres especiales se muestren correctamente -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Configura la vista para dispositivos móviles, ajustando el ancho de la página a la pantalla del dispositivo -->
-  <title>Tecnologías Informáticas</title> <!-- Establece el título de la página, que aparece en la pestaña del navegador -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <title>Tecnologías Informáticas</title> 
   <style>
     * { 
       margin: 0; 
@@ -139,7 +139,7 @@
   <header>
     <div class="header">
       BLACK CAT <!-- Título del encabezado -->
-      <img src="../Nueva carpeta (4)/picture/BLACK CAT.png" alt="Logo de Black Cat"> <!-- Logo de la marca BLACK CAT -->
+      <img src="../Black cat/picture/BLACK CAT.png" alt="Logo de Black Cat"> <!-- Logo de la marca BLACK CAT -->
     </div>
   </header>
 
