@@ -10,6 +10,7 @@
             text-align: center;
             background-color: white;
             padding: 10px;
+            background-color: #373232;
         }
         .container{
             max-width: 500px;
