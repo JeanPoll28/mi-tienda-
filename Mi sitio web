@@ -1,0 +1,170 @@
+<!DOCTYPE html> <!-- Declara que el documento es HTML5 -->
+<html lang="en"> <!-- Define que el idioma principal del documento es inglés -->
+<head>
+  <meta charset="UTF-8" /> <!-- Establece la codificación de caracteres como UTF-8 para asegurar que los caracteres especiales se muestren correctamente -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Configura la vista para dispositivos móviles, ajustando el ancho de la página a la pantalla del dispositivo -->
+  <title>Tecnologías Informáticas</title> <!-- Establece el título de la página, que aparece en la pestaña del navegador -->
+  <style>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    } /* Elimina márgenes y rellenos predeterminados y establece el modelo de caja para todos los elementos */
+    
+    body { 
+      font-family: Arial, sans-serif; /* Define la fuente de la página */
+      background-color: #0e130e; /* Establece un color de fondo oscuro */
+      display: flex; /* Utiliza Flexbox para organizar el contenido */
+      flex-direction: column; /* Organiza los elementos en una columna */
+      height: 100vh; /* Hace que el cuerpo ocupe toda la altura de la ventana */
+      padding: 10px; /* Añade relleno al cuerpo */
+    }
+
+    .header { 
+      background: rgb(73, 72, 72); /* Establece un fondo gris oscuro para el encabezado */
+      color: #3EFF3F; /* Establece el color del texto como verde brillante */
+      text-align: center; /* Centra el texto dentro del encabezado */
+      padding: 10px 20px; /* Añade relleno al encabezado */
+      font-size: 60px; /* Define el tamaño de la fuente */
+      font-weight: bold; /* Establece el texto en negrita */
+      display: flex; /* Utiliza Flexbox para alinear los elementos */
+      justify-content: center; /* Centra el contenido horizontalmente */
+      align-items: center; /* Centra el contenido verticalmente */
+      border-radius: 20px; /* Aplica bordes redondeados */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Añade una sombra sutil al encabezado */
+      margin-bottom: 10px; /* Añade un margen inferior al encabezado */
+    }
+
+    .header img { 
+      width: 70px; /* Define un tamaño de 70px para el ancho de la imagen */
+      height: 70px; /* Define un tamaño de 70px para la altura de la imagen */
+      margin-left: 20px; /* Añade un margen izquierdo para separar la imagen del texto */
+      border-radius: 50%; /* Hace que la imagen sea circular */
+      border: 2px solid #3EFF3F; /* Añade un borde verde alrededor de la imagen */
+    }
+
+    .container { 
+      display: flex; /* Utiliza Flexbox para organizar los elementos dentro del contenedor */
+      flex: 1; /* Hace que el contenedor ocupe todo el espacio disponible */
+      border-radius: 20px; /* Aplica bordes redondeados */
+      overflow: hidden; /* Evita que los elementos se desborden fuera del contenedor */
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4); /* Añade una sombra alrededor del contenedor */
+    }
+
+    .sidebar { 
+      width: 180px; /* Define el ancho fijo de la barra lateral */
+      background: rgba(73, 72, 72); /* Establece un fondo gris oscuro */
+      color: white; /* Define el color del texto como blanco */
+      padding: 20px; /* Añade relleno al interior de la barra lateral */
+    }
+
+    .sidebar ul { 
+      list-style: none; /* Elimina los puntos de lista predeterminados */
+    }
+
+    .sidebar ul li { 
+      margin: 20px 0; /* Añade un margen de 20px en la parte superior e inferior de cada ítem de lista */
+      position: relative; /* Necesario para el posicionamiento de los elementos pseudo */
+    }
+
+    .sidebar ul li a { 
+      color: white; /* Define el color de los enlaces como blanco */
+      text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+      font-size: 18px; /* Establece el tamaño de la fuente de los enlaces */
+      position: relative; /* Permite la colocación de pseudo-elementos */
+      padding-bottom: 5px; /* Añade un pequeño relleno en la parte inferior de los enlaces */
+      display: inline-block; /* Hace que los enlaces sean bloques en línea */
+      transition: color 0.3s ease; /* Añade una transición suave al color del enlace cuando se pasa el ratón */
+    }
+
+    .sidebar ul li a::after { 
+      content: ''; /* Crea un pseudo-elemento vacío */
+      position: absolute; /* Posiciona el pseudo-elemento de manera absoluta */
+      width: 0; /* Comienza con un ancho de 0 */
+      height: 2px; /* Define la altura de la línea como 2px */
+      bottom: 0; /* Coloca la línea en la parte inferior del enlace */
+      left: 0; /* Coloca la línea en el borde izquierdo del enlace */
+      background-color: #3EFF3F; /* Establece el color de la línea como verde brillante */
+      transition: width 0.3s ease; /* Añade una transición suave al ancho de la línea */
+    }
+
+    .sidebar ul li a:hover { 
+      color: #3EFF3F; /* Cambia el color del enlace a verde brillante al pasar el ratón */
+    }
+
+    .sidebar ul li a:hover::after { 
+      width: 100%; /* Hace que la línea debajo del enlace se expanda completamente */
+    }
+
+    .content { 
+      flex: 1; /* Hace que el contenido ocupe todo el espacio restante */
+      background: white; /* Establece el fondo del contenido como blanco */
+      padding: 15px; /* Añade un relleno de 15px al contenido */
+      border-radius: 0 20px 20px 0; /* Aplica bordes redondeados a la derecha */
+    }
+
+    iframe { 
+      width: 100%; /* Hace que el iframe ocupe todo el ancho del contenedor */
+      height: 100%; /* Hace que el iframe ocupe toda la altura del contenedor */
+      border: none; /* Elimina el borde alrededor del iframe */
+      border-radius: 15px; /* Aplica bordes redondeados al iframe */
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Añade una sombra interna sutil */
+    }
+
+    .footer { 
+      background: rgb(73, 72, 72); /* Establece un fondo gris oscuro para el pie de página */
+      color: aquamarine; /* Establece el color del texto como aquamarine */
+      text-align: center; /* Centra el texto dentro del pie de página */
+      padding: 10px; /* Añade relleno al pie de página */
+      margin-top: 10px; /* Añade un margen superior al pie de página */
+      border-radius: 15px; /* Aplica bordes redondeados */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Añade una sombra al pie de página */
+    }
+
+    .footer a { 
+      color: aquamarine; /* Define el color de los enlaces como aquamarine */
+      text-decoration: none; /* Elimina el subrayado de los enlaces */
+      font-weight: bold; /* Hace que los enlaces estén en negrita */
+    }
+
+    .footer img { 
+      width: 25px; /* Define el tamaño de la imagen como 25px */
+      height: 25px; /* Define el tamaño de la imagen como 25px */
+      margin-left: 10px; /* Añade un margen izquierdo a la imagen */
+      vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header">
+      BLACK CAT <!-- Título del encabezado -->
+      <img src="../Nueva carpeta (4)/picture/BLACK CAT.png" alt="Logo de Black Cat"> <!-- Logo de la marca BLACK CAT -->
+    </div>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="accesorios.html" target="content-frame">Accesorios</a></li> <!-- Enlace a la sección de Accesorios -->
+        <li><a href="Zapatilla.html" target="content-frame">Zapatillas</a></li> <!-- Enlace a la sección de Zapatillas -->
+        <li><a href="pantalones.html" target="content-frame">Pantalon</a></li> <!-- Enlace a la sección de Pantalones -->
+        <li><a href="casacasypoleras.html" target="content-frame">Casacas y Poleras</a></li> <!-- Enlace a la sección de Casacas y Poleras -->
+      </ul>
+    </nav>
+    <main class="content">
+      <iframe name="content-frame" src="index.html"></iframe> <!-- Contenedor de contenido cargado dentro de un iframe -->
+    </main>
+  </div>
+
+  <footer class="footer">
+    &copy; 2025 - BLACK CAT | Todos los derechos reservados <!-- Texto del pie de página -->
+    <p><strong>Contacto: </strong>
+      <span>
+        <a href="https://wa.link/hsfekm" target="_blank">946594438</a> <!-- Enlace al número de WhatsApp -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo"> <!-- Icono de WhatsApp -->
+      </span>
+    </p>
+  </footer>
+</body>
+</html>
