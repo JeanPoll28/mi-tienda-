@@ -1,0 +1,66 @@
+/* El contenedor del video ocupa toda la pantalla */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca el video detrás del contenido */
+    overflow: hidden;
+}
+
+/* Hacer que el video cubra toda el área */
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el video se recorte de manera que cubra toda la pantalla */
+}
+
+/* Estilos básicos para el contenido */
+.contenido {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté sobre el video */
+    color: white;
+    padding: 0px
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li{
+    margin-left: 20px;
+}
+.capa{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1c1c1d;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5em;
+}
+footer{
+    /*fondo oscuro para el pie d ela pagina*/
+   position: absolute;
+    background-color: #333;
+    color: white;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+
+}
